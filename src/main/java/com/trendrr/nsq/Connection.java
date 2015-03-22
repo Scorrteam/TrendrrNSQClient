@@ -4,22 +4,20 @@ package com.trendrr.nsq;
  *
  */
 
-import java.util.Date;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
-
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.channel.ChannelFuture;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.trendrr.nsq.exceptions.DisconnectedException;
 import com.trendrr.nsq.frames.ErrorFrame;
 import com.trendrr.nsq.frames.MessageFrame;
 import com.trendrr.nsq.frames.NSQFrame;
 import com.trendrr.nsq.frames.ResponseFrame;
+import org.jboss.netty.channel.Channel;
+import org.jboss.netty.channel.ChannelFuture;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.Date;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 
 
 
@@ -187,7 +185,6 @@ public class Connection {
 			log.error("Caught", x);
 		}
 		log.warn("Close called on connection: " + this);
-		this._disconnected();
 	}
 
 	/**
